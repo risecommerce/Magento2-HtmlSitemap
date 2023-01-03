@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © Risecommerce (support@risecommerce.com). All rights reserved.
+ *
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceContainer name="content">
+            <block name="html-sitemap-general" template="Risecommerce_HtmlSitemap::general.phtml"/>
+			<block class="Risecommerce\HtmlSitemap\Block\Blog\Category" ifconfig="rcblog/general/enabled" name="blog.category" template="Risecommerce_HtmlSitemap::blog/category.phtml"/>
+		</referenceContainer>
+	</body>
+</page>

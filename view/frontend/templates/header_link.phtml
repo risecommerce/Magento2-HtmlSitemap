@@ -1,0 +1,26 @@
+<?php
+/**
+ * Copyright © Risecommerce (support@risecommerce.com). All rights reserved.
+ *
+ */
+
+/**
+ * @var $block \Risecommerce\HtmlSitemap\Block\Link
+ */
+?>
+
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$config = $objectManager->create(\Risecommerce\HtmlSitemap\Model\Config::class);
+$displayInArray = explode(',', $config->displayIn());
+$openLinks = ($block->getOpenLinks() == 1) ? '' : 'target="_blank"';
+?>
+<?php if ($config->isEnabled()): ?>
+    <?php if (in_array('1', $displayInArray)): ?>
+    <li>
+        <a href="<?= $block->escapeUrl($block->getHref()) ?>" name="header_htmlsitemap_link" <?= $openLinks ?>>
+            <?= $block->escapeHtml($block->getLabel()) ?>
+        </a>
+    </li>
+    <?php endif ?>
+<?php endif ?>

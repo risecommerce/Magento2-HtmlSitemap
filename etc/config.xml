@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Risecommerce (support@risecommerce.com). All rights reserved.
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <rchs>
+            <general>
+                <enabled>1</enabled>
+                <module>HtmlSitemap</module>
+                <type>1</type>
+                <displayin>2</displayin>
+                <openlinks>1</openlinks>
+            </general>
+            <index_page>
+                <title>Sitemap</title>
+            </index_page>
+            <cmspagelinks>
+                <displaycmspagelinks>1</displaycmspagelinks>
+                <title>Pages</title>
+                <position>10</position>
+                <maxnumberlinks>50</maxnumberlinks>
+                <displaymore>1</displaymore>
+            </cmspagelinks>
+            <productlinks>
+                <displayproductlinks>1</displayproductlinks>
+                <title>Products</title>
+                <position>20</position>
+                <maxnumberlinks>50</maxnumberlinks>
+                <displaymore>1</displaymore>
+            </productlinks>
+            <categorylinks>
+                <displaycategorylinks>1</displaycategorylinks>
+                <title>Categories</title>
+                <position>30</position>
+                <maxdepth>3</maxdepth>
+                <maxnumberlinks>10</maxnumberlinks>
+                <displaymore>1</displaymore>
+            </categorylinks>
+            <blogpostlinks>
+                <displaypostlinks>1</displaypostlinks>
+                <title>Blog Posts</title>
+                <position>40</position>
+                <maxnumberlinks>50</maxnumberlinks>
+                <displaymore>1</displaymore>
+            </blogpostlinks>
+            <blogcategorylinks>
+                <displayblogcategorylinks>1</displayblogcategorylinks>
+                <title>Blog Categories</title>
+                <position>50</position>
+                <maxdepth>3</maxdepth>
+                <maxnumberlinks>10</maxnumberlinks>
+                <displaymore>1</displaymore>
+            </blogcategorylinks>
+            <additionallinks>
+                <displaylinks>1</displaylinks>
+                <links>Enter/your/link/here/|(Title)</links>
+                <title>Additional Pages</title>
+                <position>60</position>
+                <maxnumberlinks>50</maxnumberlinks>
+                <displaymore>1</displaymore>
+            </additionallinks>
+            <ignored>
+                <links>/home/
+/no-route/
+/enable-cookies/
+/category-title/*</links>
+            </ignored>
+            <seo>
+                <metatitle>Sitemap</metatitle>
+            </seo>
+        </rchs>
+    </default>
+</config>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © Risecommerce (support@risecommerce.com). All rights reserved.
+ *
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceContainer name="content">
+            <block name="html-sitemap-general" template="Risecommerce_HtmlSitemap::general.phtml"/>
+            <block class="Risecommerce\HtmlSitemap\Block\Sitemap" name="blog.sitemap">
+                <block class="Risecommerce\HtmlSitemap\Block\Catalog\Category" name="index.catalog.category" template="Risecommerce_HtmlSitemap::index/catalog_category.phtml" ifconfig="rchs/categorylinks/displaycategorylinks"/>
+                <block class="Risecommerce\HtmlSitemap\Block\Catalog\Product" name="index.catalog.product" template="Risecommerce_HtmlSitemap::index/catalog_product.phtml" ifconfig="rchs/productlinks/displayproductlinks"/>
+                <block class="Risecommerce\HtmlSitemap\Block\Blog\Post" name="blog.post" template="Risecommerce_HtmlSitemap::index/blog_post.phtml" ifconfig="rchs/blogpostlinks/displaypostlinks"/>
+                <block class="Risecommerce\HtmlSitemap\Block\Blog\Category" name="blog.category" template="Risecommerce_HtmlSitemap::index/blog_category.phtml" ifconfig="rchs/blogcategorylinks/displayblogcategorylinks"/>
+                <block class="Risecommerce\HtmlSitemap\Block\Additional\Additional" name="index.additional.additional" template="Risecommerce_HtmlSitemap::index/additional_additional.phtml" ifconfig="rchs/additionallinks/displaylinks"/>
+                <block class="Risecommerce\HtmlSitemap\Block\Cms\Page" name="index.cms.pages" template="Risecommerce_HtmlSitemap::index/cms_pages.phtml" ifconfig="rchs/cmspagelinks/displaycmspagelinks"/>
+            </block>
+        </referenceContainer>
+	</body>
+</page>

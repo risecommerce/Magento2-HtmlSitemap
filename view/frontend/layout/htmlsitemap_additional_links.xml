@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © Risecommerce (support@risecommerce.com). All rights reserved.
+ *
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceContainer name="content">
+            <block name="html-sitemap-general" template="Risecommerce_HtmlSitemap::general.phtml"/>
+			<!--<block class="Risecommerce\HtmlSitemap\Block\Additional\List" name="additional.list" template="Risecommerce_HtmlSitemap::additional/list.phtml"/>-->
+			<block as="additional_additional" class="Risecommerce\HtmlSitemap\Block\Additional\Additional" name="additional.additional" template="Risecommerce_HtmlSitemap::additional/additional.phtml"/>
+		</referenceContainer>
+	</body>
+</page>

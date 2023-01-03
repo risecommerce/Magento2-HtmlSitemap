@@ -1,0 +1,43 @@
+<?php
+/**
+ * Copyright © Risecommerce (support@risecommerce.com). All rights reserved.
+ *
+ */
+?>
+<?php
+/**
+ * @var \Risecommerce\HtmlSitemap\Block\Blog\Post $block
+ */
+
+$posts = $block->getPostsCollection();
+$limit = 4;
+$i = 0;
+$j = 0;
+?>
+<?php if (count($posts)) { ?>
+<div class="sitemap-item-type sitemap-item-section">
+    <h2><?= $block->escapeHtml(__($block->getBlockTitle())) ?></h2>
+    <br>
+    <?php foreach ($posts as $post): ?>
+        <?= ($i === 0) ? '<div class="sitemap-col">' : '' ?>
+            <a href="<?= $block->escapeUrl($post->getPostUrl()) ?>" title="<?= $block->escapeHtml($post->getTitle()) ?>">
+                <?= $block->escapeHtml($post->getTitle()) ?>
+            </a>
+
+        <?= ($i === $limit-1 || count($posts)-1 == $j) ? '</div>' : '' ?>
+        <?php
+            $i++;
+            $j++;
+
+            if ($i === $limit) {
+                $i = 0;
+            }
+        ?>
+    <?php endforeach; ?>
+    <?php if ($block->showViewMore()): ?>
+        <a href="<?= $block->escapeUrl($block->getUrl('*/blog_post/post'))?>" style="color: red; padding: 5px;">
+            <?= $block->escapeHtml(__('View more'))?>
+        </a>
+    <?php endif; ?>
+</div>
+<?php } ?>

@@ -1,0 +1,46 @@
+<?php
+/**
+ * Copyright © Risecommerce (support@risecommerce.com). All rights reserved.
+ *
+ */
+?>
+
+<?php
+/**
+ * @var \Risecommerce\HtmlSitemap\Block\Cms\Page $block
+ */
+
+$pages = $block->getCmsPages();
+$limit = 4;
+$i = 0;
+$j = 0;
+?>
+<?php if (count($pages)) { ?>
+    <div class="sitemap-item-type sitemap-item-section">
+        <h2><?= $block->escapeHtml(__($block->getBlockTitle())) ?></h2>
+        <br>
+        <?php foreach ($pages as $page): ?>
+            <?= ($i === 0) ? '<div class="sitemap-col">' : '' ?>
+                <a href="<?= $block->escapeUrl($block->getBaseUrl() . $page->getIdentifier()) ?>" title="<?= $block->escapeHtml($page['title']) ?>">
+                    <?= $block->escapeHtml($page['title']) ?>
+                </a>
+            <?= ($i === $limit-1 || count($pages)-1 == $j) ? '</div>' : '' ?>
+            <?php
+                $i++;
+                $j++;
+
+                if ($i === $limit) {
+                    $i = 0;
+                }
+            ?>
+        <?php endforeach; ?>
+        <?php if ($block->showViewMore()): ?>
+            <a href="<?= $block->escapeUrl($block->getUrl('*/cms_page/page'))?>" style="color: red; padding: 5px;">
+                <?= $block->escapeHtml(__('View more'))?>
+            </a>
+        <?php endif; ?>
+    </div>
+<?php } ?>
+
+
+
